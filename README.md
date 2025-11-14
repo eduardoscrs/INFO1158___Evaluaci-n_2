@@ -1,2 +1,2 @@
-# INFO1158___Evaluaci-n_2
+# INFO1158___Evaluacion_2
 Evaluación n2 grafos 
