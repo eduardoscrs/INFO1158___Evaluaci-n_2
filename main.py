@@ -28,8 +28,8 @@ import matplotlib.pyplot as plt
 # ============================================================================
 # DEFINICIÓN DE CIUDADES
 # ============================================================================
-# Ciudades europeas seleccionadas (6-9 ciudades según enunciado)
-ciudades = [
+# Dataset 1: 7 Ciudades (Original)
+ciudades_7 = [
     {"nombre": "Madrid",    "coords": (40.4168, -3.7038)},
     {"nombre": "París",     "coords": (48.8566, 2.3522)},
     {"nombre": "Londres",   "coords": (51.5074, -0.1278)},
@@ -39,6 +39,36 @@ ciudades = [
     {"nombre": "Bruselas",  "coords": (50.8503, 4.3517)}
 ]
 
+# Dataset 2: 12 Ciudades (Escalabilidad)
+ciudades_12 = ciudades_7 + [
+    {"nombre": "Viena",     "coords": (48.2082, 16.3738)},
+    {"nombre": "Praga",     "coords": (50.0755, 14.4378)},
+    {"nombre": "Zúrich",    "coords": (47.3769, 8.5417)},
+    {"nombre": "Copenhague","coords": (55.6761, 12.5683)},
+    {"nombre": "Budapest",  "coords": (47.4979, 19.0402)}
+]
+
+
+def seleccionar_dataset():
+    """Permite al usuario elegir entre los conjuntos de datos."""
+    print("\nSeleccione el conjunto de datos:")
+    print("1. 7 Ciudades (Rápido - Original)")
+    print("2. 12 Ciudades (Prueba de escalabilidad - Puede tardar varios minutos)")
+    
+    while True:
+        opcion = input("\nOpción (1/2): ").strip()
+        if opcion == '1':
+            return ciudades_7
+        elif opcion == '2':
+            print("\n ADVERTENCIA: Con 12 ciudades, la búsqueda exhaustiva evaluará")
+            print("   (12-1)!/2 = 19,958,400 permutaciones.")
+            print("   Esto puede tomar entre 30 segundos y varios minutos dependiendo de tu CPU.")
+            confirm = input("   ¿Desea continuar? (s/n): ").strip().lower()
+            if confirm == 's':
+                return ciudades_12
+        else:
+            print("Por favor ingrese 1 o 2.")
+
 
 def main():
     """Función principal del programa."""
@@ -47,6 +77,9 @@ def main():
     print(" "*15 + "PROBLEMA DEL VIAJANTE (TSP)")
     print(" "*10 + "Búsqueda Exhaustiva vs Vecino Más Cercano")
     print("="*70 + "\n")
+    
+    # Seleccionar ciudades
+    ciudades = seleccionar_dataset()
     
     # Crear directorio para resultados
     os.makedirs('results', exist_ok=True)

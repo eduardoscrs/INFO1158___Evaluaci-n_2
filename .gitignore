@@ -28,5 +28,5 @@ ENV/
 Thumbs.db
 
 # Resultados 
-results/
+# results/
 data/*.csv

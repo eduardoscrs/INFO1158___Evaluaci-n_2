@@ -10,15 +10,16 @@ El objetivo es encontrar la ruta más corta posible que visite un conjunto de ci
 
 ```
 INFO1158___Evaluaci-n_2/
-├── main.py                 # Script principal que orquesta la ejecución
-├── a2.py                   # Versión alternativa/simplificada del script principal
-├── results/                # Carpeta generada con gráficos, tablas y animaciones
-└── src/                    # Código fuente modular
-    ├── comparador.py       # Análisis comparativo y generación de métricas
-    ├── distance_calculator.py # Cálculo de matrices de distancia (Euclidiana/Haversine)
-    ├── exhaustive_search.py   # Algoritmo de Búsqueda Exhaustiva
-    ├── nearest_neighbor.py    # Algoritmo del Vecino Más Cercano
-    └── visualizer.py       # Generación de gráficos y animaciones
+├── INFO1158___Evaluación_2.pdf # Enunciado de la evaluación
+├── main.py                     # Script principal que orquesta la ejecución
+├── README.md                   # Documentación del proyecto
+├── results/                    # Carpeta generada con gráficos, tablas y animaciones
+└── src/                        # Código fuente modular
+    ├── comparador.py           # Análisis comparativo y generación de métricas
+    ├── distance_calculator.py  # Cálculo de matrices de distancia (Euclidiana)
+    ├── exhaustive_search.py    # Algoritmo de Búsqueda Exhaustiva
+    ├── nearest_neighbor.py     # Algoritmo del Vecino Más Cercano
+    └── visualizer.py           # Generación de gráficos y animaciones
 ```
 
 ## 🧠 Algoritmos de Búsqueda
@@ -64,6 +65,18 @@ El archivo `main.py` ejecuta el siguiente flujo de trabajo:
     *   Genera gráficos estáticos de los ciclos encontrados.
     *   Crea gráficos de barras comparando tiempos y distancias.
     *   (Opcional) Genera animaciones GIF mostrando el proceso de búsqueda paso a paso.
+
+## 📊 Resultados Visuales
+
+El programa genera animaciones que permiten visualizar cómo opera cada algoritmo:
+
+### Búsqueda Exhaustiva
+Explora todas las posibilidades (líneas rojas) hasta encontrar el óptimo (línea verde).
+![Búsqueda Exhaustiva](results/animaciones/busqueda_exhaustiva.gif)
+
+### Vecino Más Cercano
+Construye la ruta paso a paso eligiendo siempre la ciudad más próxima.
+![Vecino Más Cercano](results/animaciones/vecino_mas_cercano.gif)
 
 ## 🛠️ Requisitos e Instalación
 

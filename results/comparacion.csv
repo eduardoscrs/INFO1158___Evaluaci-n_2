@@ -1,0 +1,10 @@
+Métrica,Valor
+Número de ciudades,12
+Longitud óptima (L⋆),68.8852
+Longitud heurística (LNN),77.9562
+Diferencia absoluta,9.0710
+Gap (%),13.17
+Tiempo exhaustivo (s),57.759742
+Tiempo NN (s),0.001728
+Speedup (x),33433.88
+Ciclos evaluados,"39,916,800"
